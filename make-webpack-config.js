@@ -34,6 +34,7 @@ module.exports = function createConfig(options) {
           exclude: /node_modules/,
           loader: 'react-hot!babel'
         },
+        { test: /\.tsx?$/, loader: "ts-loader" },
         {
           test: /\.css$/,
           loader: ExtractTextPlugin.extract("style-loader", "css-loader")
@@ -46,10 +47,14 @@ module.exports = function createConfig(options) {
           test: /\.sass$/,
           loader: ExtractTextPlugin.extract("style-loader", "css!sass")
         }
+      ],
+      preLoaders: [
+        // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+        { test: /\.js$/, loader: "source-map-loader" }
       ]
     },
     resolve: {
-      extensions: ['', '.js', '.jsx']
+      extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
     },
     output: {
       path: __dirname + '/public',
@@ -61,6 +66,10 @@ module.exports = function createConfig(options) {
       hot: true
     },
     devtool: options.devtool,
-    plugins: plugins
+    plugins: plugins,
+    // externals: {
+    //   "react": "React",
+    //   "react-dom": "ReactDOM"
+    // },
   }
 }

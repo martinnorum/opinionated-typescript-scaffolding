@@ -4,7 +4,7 @@ const createConfig = require('./make-webpack-config')
 module.exports = createConfig({
   entry: [
     'babel-polyfill',
-    './src/index.jsx'
+    './src/index.tsx'
   ],
   plugins: [
     new webpack.DefinePlugin({
