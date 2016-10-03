@@ -1,5 +1,6 @@
 {
   "projects": {
-    "firebase_test": "fir-test-2a472"
+    "firebase_test": "fir-test-2a472",
+    "production": "pax-spa"
   }
 }
