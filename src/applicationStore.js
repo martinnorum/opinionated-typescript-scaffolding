@@ -1,6 +1,4 @@
 import { createStore, applyMiddleware, compose } from 'redux'
-import createLogger from 'redux-logger'
-import RavenMiddleware from 'redux-raven-middleware'
 import rootReducer from './bootstrap/rootReducer'
 import { routerMiddleware } from 'react-router-redux'
 

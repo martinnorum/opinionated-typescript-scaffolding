@@ -7,7 +7,7 @@ import {
 import { AppContainer } from './App'
 import { WelcomeScreenContainer} from './modules/WelcomeScreen/WelcomeScreen'
 
-export default function createRoutes(store) {
+export default function createRoutes() {
   return (
     <Route path="/" component={AppContainer}>
       <IndexRedirect to="/welcome" />

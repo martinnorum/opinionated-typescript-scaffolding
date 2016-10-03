@@ -1,7 +1,6 @@
-import React, {PropTypes, Component} from 'react'
+import React, { Component, PropTypes } from 'react'
 import shallowCompare from 'react-addons-shallow-compare'
-import {connect} from 'react-redux'
-import ImmutablePropTypes from 'react-immutable-proptypes'
+import { connect } from 'react-redux'
 
 export class App extends Component {
 
@@ -20,7 +19,7 @@ App.propTypes = {
   children: PropTypes.node
 }
 
-function mapStateToProps(state) {
+function mapStateToProps() {
   return {
   }
 }

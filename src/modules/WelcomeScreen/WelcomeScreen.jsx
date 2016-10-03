@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react'
 import {connect} from 'react-redux'
 import shallowCompare from 'react-addons-shallow-compare'
 import RaisedButton from 'material-ui/RaisedButton'
-import * as appConstants from '../../utils/appConstants'
 
 export class WelcomeScreen extends Component {
 

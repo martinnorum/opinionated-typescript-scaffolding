@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {
   Router,
-  createMemoryHistory,
   hashHistory
 } from 'react-router'
 
@@ -15,7 +14,6 @@ import { fromJS } from 'immutable'
 
 import applicationStore from './applicationStore'
 
-import loadInitialData from './bootstrap/loadInitialData'
 import parseAppConfig from './utils/appConfig'
 import { syncHistoryWithStore } from 'react-router-redux'
 
