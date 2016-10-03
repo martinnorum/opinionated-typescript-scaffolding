@@ -17,13 +17,11 @@ export class App extends Component {
 }
 
 App.propTypes = {
-  children: PropTypes.node,
-  ui: ImmutablePropTypes.map.isRequired
+  children: PropTypes.node
 }
 
 function mapStateToProps(state) {
   return {
-    ui: state.get('ui')
   }
 }
 

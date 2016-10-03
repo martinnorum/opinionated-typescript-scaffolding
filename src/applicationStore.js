@@ -5,7 +5,7 @@ import rootReducer from './bootstrap/rootReducer'
 import { routerMiddleware } from 'react-router-redux'
 
 
-export default function (initialState, unityIntegration, browserHistory) {
+export default function (initialState, browserHistory) {
 
   const middlewares = []
 

@@ -63,10 +63,7 @@ const styles = {
   root: {
     width: '100%',
     height: '100%',
-    backgroundColor: 'white',
-    backgroundImage: 'url('+ '/img/onboarding-bg.jpg' +')',
-    backgroundPosition: '35%' + 'center',
-    backgroundSize: 'cover',
+    backgroundColor: 'darkGrey',
     fontFamily: 'ProximaNova',
   },
   shadow: {

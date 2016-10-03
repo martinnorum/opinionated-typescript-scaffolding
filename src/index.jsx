@@ -26,11 +26,8 @@ injectTapEventPlugin()
 
 const initialState = fromJS({ "appConfig": parseAppConfig(window.location.search) })
 
-const platform = initialState.getIn(['appConfig', 'platform'], ApplicationPlatformConstants.MOCK)
-
 const store = applicationStore(
   initialState,
-  unityIntegration,
   hashHistory
 )
 
@@ -51,13 +48,3 @@ ReactDOM.render(
   // Would prefer to use ID instead
   document.getElementsByClassName('app')[0]
 )
-
-setupUnity(store.dispatch, unityIntegration)
-  .then(loadInitialData(store.dispatch))
-
-const runningMockUnity = platform === ApplicationPlatformConstants.MOCK
-// Fake a bunch of events that's normally sent by the Unity layer at start up
-if (runningMockUnity) {
-  unityIntegration.trigger('Ready')
-  unityIntegration.trigger('appBecameActive')
-}
