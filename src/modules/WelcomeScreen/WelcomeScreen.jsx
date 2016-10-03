@@ -4,54 +4,25 @@ import shallowCompare from 'react-addons-shallow-compare'
 import RaisedButton from 'material-ui/RaisedButton'
 import * as appConstants from '../../utils/appConstants'
 
-import EdutoneAuthButton from '../Auth/components/EdutoneAuthButton'
-
-
 export class WelcomeScreen extends Component {
 
   shouldComponentUpdate = (nextProps, nextState) => shallowCompare(this, nextProps, nextState)
 
   handleClick = () => {
-    this.context.router.push(`/characters`)
-  }
-
-  // TODO: Remove when marged with EDU-217
-  // The same for :30-33
-  handlePlotagonClick = (e) => {
-    e.preventDefault() // prevents accidental triggering of login on the next page
-    this.context.router.push(`/login`)
   }
 
   render() {
     const isActive = this.props.dataReady
     const content = () => {
-      switch (this.props.bundleId) {
-        case appConstants.PLOTAGON_FOR_EDUCATION:
-        case appConstants.PLOTAGON_FOR_EDUCATION_TEST:
-          return (
-            <div>
-              <RaisedButton
-                label={"Login with Plotagon"}
-                labelColor="white"
-                disabled={!isActive}
-                style={styles.button}
-                onTouchTap={this.handlePlotagonClick}
-              />
-              <br />
-              <EdutoneAuthButton style={styles.button} />
-            </div>
-          )
-        default:
-          return (
-            <RaisedButton
-              label={"Begin the journey!"}
-              labelColor="white"
-              disabled={!isActive}
-              style={styles.button}
-              onTouchTap={this.handleClick}
-            />
-          )
-      }
+      return (
+        <RaisedButton
+          label={"Begin the journey!"}
+          labelColor="white"
+          disabled={!isActive}
+          style={styles.button}
+          onTouchTap={this.handleClick}
+        />
+      )
     }
 
     return (

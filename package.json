@@ -1,14 +1,9 @@
 {
-  "name": "@plotagon/education-frontend-creator",
+  "name": "firebase_test",
   "main": "index.jsx",
-  "version": "1.0.3",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:plotagon/education-frontend-creator.git"
-  },
   "scripts": {
-    "open": "open -a '/Applications/Google Chrome.app' 'http://localhost:8080/dev.html?logging=true'",
+    "open": "open -a '/Applications/Google Chrome.app' 'http://localhost:8080/index.html?logging=true'",
     "start": "webpack-dev-server -d --config webpack-dev.config.js",
     "validate": "npm-run-all --parallel jslint validate-webpack:* coverage",
     "validate:ci": "npm-run-all validate coveralls",

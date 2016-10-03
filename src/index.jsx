@@ -13,18 +13,11 @@ import { Provider } from 'react-redux'
 
 import { fromJS } from 'immutable'
 
-import ApplicationPlatformConstants from './ApplicationPlatformConstants'
-import createUnityIntegration from './utils/createUnityIntegration'
-import * as mockedUnityIntegration from '@plotagon/mock-unity-integration'
-
 import applicationStore from './applicationStore'
 
-import setupUnity from './bootstrap/setupUnity'
 import loadInitialData from './bootstrap/loadInitialData'
 import parseAppConfig from './utils/appConfig'
 import { syncHistoryWithStore } from 'react-router-redux'
-// eslint-disable-next-line
-import css from '../styles/main.scss'
 
 import createRoutes from './Routes'
 
@@ -35,21 +28,13 @@ const initialState = fromJS({ "appConfig": parseAppConfig(window.location.search
 
 const platform = initialState.getIn(['appConfig', 'platform'], ApplicationPlatformConstants.MOCK)
 
-const unityIntegration = platform === ApplicationPlatformConstants.MOCK
-  ? mockedUnityIntegration
-  : createUnityIntegration(window.engine)
-
-const historyType = platform === ApplicationPlatformConstants.IPHONE_PLAYER
-  ? createMemoryHistory()
-  : hashHistory
-
 const store = applicationStore(
   initialState,
   unityIntegration,
-  historyType
+  hashHistory
 )
 
-const history = syncHistoryWithStore(historyType, store, {
+const history = syncHistoryWithStore(hashHistory, store, {
   selectLocationState (state) {
     return state.getIn(['routing']).toJS()
   }
