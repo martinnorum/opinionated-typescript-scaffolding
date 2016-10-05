@@ -29,12 +29,12 @@ module.exports = function createConfig(options) {
     entry: options.entry,
     module: {
       loaders: [
+        { test: /\.tsx?$/, loader: "ts-loader" },
         {
           test: /\.jsx?$/,
           exclude: /node_modules/,
           loader: 'react-hot!babel'
         },
-        { test: /\.tsx?$/, loader: "ts-loader" },
         {
           test: /\.css$/,
           loader: ExtractTextPlugin.extract("style-loader", "css-loader")

@@ -14,7 +14,7 @@ export default function (initialState, browserHistory) {
     initialState,
     compose(
       applyMiddleware(...middlewares),
-      window.devToolsExtension ? window.devToolsExtension() : f => f
+      window['devToolsExtension'] ? window['devToolsExtension']() : f => f
     )
   )
 }

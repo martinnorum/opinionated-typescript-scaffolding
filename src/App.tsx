@@ -1,8 +1,18 @@
-import React, { Component, PropTypes } from 'react'
-import shallowCompare from 'react-addons-shallow-compare'
+import * as React from 'react'
+import * as shallowCompare from 'react-addons-shallow-compare'
 import { connect } from 'react-redux'
 
-export class App extends Component {
+interface AppProps {
+  children: any
+}
+interface AppState {
+}
+
+export class App extends React.Component<AppProps, AppState> {
+
+  static propTypes = {
+    children: React.PropTypes.node
+  }
 
   shouldComponentUpdate = (nextProps, nextState) => shallowCompare(this, nextProps, nextState)
 
@@ -13,10 +23,6 @@ export class App extends Component {
       </div>
     )
   }
-}
-
-App.propTypes = {
-  children: PropTypes.node
 }
 
 function mapStateToProps() {

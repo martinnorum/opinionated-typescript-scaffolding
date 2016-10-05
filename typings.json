@@ -1,6 +1,16 @@
 {
   "globalDependencies": {
+    "immutable": "registry:dt/immutable#3.8.1+20160608070634",
+    "material-ui": "registry:dt/material-ui#0.15.1+20161003183714",
     "react": "registry:dt/react#0.14.0+20160927082313",
-    "react-dom": "registry:dt/react-dom#0.14.0+20160412154040"
+    "react-addons-shallow-compare": "registry:dt/react-addons-shallow-compare#0.14.0+20160709044614",
+    "react-dom": "registry:dt/react-dom#0.14.0+20160412154040",
+    "react-redux": "registry:dt/react-redux#4.4.0+20160908183346",
+    "react-router": "registry:dt/react-router#2.0.0+20160928130202",
+    "react-router-redux": "registry:dt/react-router-redux#4.0.0+20160930121107",
+    "react-tap-event-plugin": "registry:dt/react-tap-event-plugin#0.0.0+20160602142434",
+    "redux": "registry:dt/redux#3.5.2+20160703092728",
+    "redux-devtools": "registry:dt/redux-devtools#3.0.0+20161003133120",
+    "redux-immutable": "registry:dt/redux-immutable#3.0.5+20160703120921"
   }
 }
